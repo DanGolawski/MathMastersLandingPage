@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MathApp już jest!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <!-- PAGE 1 -->
+    <div class="page">
+      <div class="main-container">
+        <div class="content-container">
+          <div class="background-circle"></div>
+          <h1>MathApp już jest!</h1>
+          <h3>Aplikacja, dzięki której nauka matematyki stała się przyjemniejsza.</h3>
+          <p>Nie wiesz jak rozwiązać zadanie?</p>
+          <p>Nauczyciel nie wytłumaczył na lekcji niczego?</p>
+          <p>Teraz to nie problem!</p>
+          <div class="buttons-container">
+            <a class="navigation-button">o MathMasters</a>
+            <a class="navigation-button">o Aplikacji</a>
+            <a class="navigation-button">Kontakt</a>
+          </div>
+          <div class="store-links-container">
+            <div class="store-link">
+              <img class="qrcode" src="./resources/fakeqrcode.jpg">
+              <img class="store-label" src="./resources/googleplay.png">
+            </div>
+            <div class="store-link">
+              <img class="qrcode" src="./resources/fakeqrcode.jpg">
+              <img class="store-label" src="./resources/appstore.png">
+            </div>
+          </div>
+        </div>
+        <img class="phone-image" src="./resources/mainphone.png">
+      </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page page-blue">
+      <img class="mathmasterslogo" src="./resources/mathmasterslogo.png">
+      <div class="mathmasters-description">
+        <h1>Kim są MathMasters?</h1>
+        <p>Jesteśmy grupą studentów związanych z Matematyką. W raz ze zdobywanym doświadczeniem w udzielaniu klasycznych korepetycji dostrzegliśmy wiele problemów z jakimi wciąż zmagają się uczniowie szkół.</p>
+        <br>
+        <p>Zapragnęliśmy stworzyć aplikację, która pomoże Ci podczas odrabiania prac domowych i ułatwi zrozumienie wszystkich tematów</p>
+        <br>
+        <br>
+        <p>Nic nie zrozumiałeś na lekcji?</p>
+        <p>Korepetycje są zbyt drogie?</p>
+        <p>Jesteś przeciążony/a ilością materiału?</p>
+        <strong>My Ci pomożemy!</strong>
+      </div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="page">
+      <div class="main-container">
+        <img id="slide-phone" class="phone-image" src="./resources/mainphone.png">
+        <div class="content-container text-slider">
+          <h1 id="slide-title">Przeglądaj rozwiązania zadań szybko i łatwo</h2>
+          <h3 id="slide-description"></h3>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.onload = () => {
+        const textContent = [
+          {
+            title: 'Ucz się lepiej i przyjemniej',
+            description: 'Już nie musisz robić matematyki na ślepo. Znajdziesz tu tutoriale i rozwiązania zadań - efektywna, szybka i przyjemna nauka bez zbędnych frustracji oraz wysokich kosztów za korepetycje',
+            image: 'phonemenu.png'
+          },
+          {
+            title: 'Kilka kliknięć dzieli Cię od całkowicie rozwiązanego zbioru zadań',
+            description: 'Przeglądaj zbiory zadań, tematy i konkretne zadania. Kopiuj dobre praktyki, które przydadzą Ci się na maturze. Wszystkie zadania są posegregowane, dlatego zawsze szybko je odnajdziesz',
+            image: 'phonetopics.png'
+          },
+          {
+            title: 'Przeglądaj rozwiązania zadań szybko i łatwo',
+            description: 'Masz dostęp do pełnych rozwiązań z twojego zbioru zadań. Już nie musisz frustrować się robieniem pracy domowej z geometrii lub czekać na korepetycje',
+            image: 'phoneexercise.png'
+          },
+          {
+            title: 'Jakieś pytania? Skontaktuj się z nami!',
+            description: 'Aplikacja to nie tylko rozwiązania i filmy. Tworzymy społeczność i razem poradzimy sobie z nadmiarem niepotrzebnej szkolnej wiedzy, która nigdy Ci się nie przyda',
+            image: 'phonelearning.png'
+          }
+        ]
+        const title = document.querySelector('#slide-title');
+        const description = document.querySelector('#slide-description');
+        const image = document.querySelector('#slide-phone');
+        let slideIdx = 0;
+        changeText(0);
+        setInterval(() => {
+          slideIdx = ++slideIdx % textContent.length;
+          changeText(slideIdx);
+        }, 7000);
+
+        function changeText(idx) {
+          title.style.opacity = 0;
+          description.style.opacity = 0;
+          setTimeout(() => {
+            title.innerHTML = textContent[idx].title;
+            description.innerHTML = textContent[idx].description;
+            title.style.opacity = 1;
+            description.style.opacity = 1;
+          }, 1000)
+          image.src = `resources/${textContent[idx].image}`;
+        }
+      }
+    </script>
+  </body>
+</html>

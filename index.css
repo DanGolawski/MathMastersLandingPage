@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Kanit', sans-serif;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  color: #023d69;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-blue {
+  background-color: #023d69;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-container {
+  height: 100vh;
+  flex: 1;
+}
+
+.background-circle {
+  position: absolute;
+  width: 200vh;
+  height: 200vh;
+  background-color: #023d69;
+  border-radius: 50%;
+  top: 20vh;
+  left: -100vh;
+  opacity: 0.3;
+  background-color: rgba(89, 131, 252, 1);
+  background-image: linear-gradient(266deg, rgba(89, 131, 252, 1) 33%, rgba(41, 53, 86, 1) 77%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.phone-image {
+  margin-top: 10vh;
+  height: 80vh;
+}
+
+h1, h3, p, strong {
+  text-align: center;
+}
+
+strong {
+  display: block;
+}
+
+h1 {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 3vh;
+}
+
+p {
+  font-size: 2rem;
+  line-height: 5vh;
+}
+
+.buttons-container {
+  padding: 3vh 0 3vh 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.navigation-button {
+  background-color: #023d69;
+  padding: 3vh;
+  color: white;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.store-links-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.store-link {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.mathmasters-description {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.mathmasters-description p, .mathmasters-description strong {
+  font-size: 2.5rem;
+  overflow: hidden;
+}
+
+.mathmasterslogo {
+  height: 20vh;
+  display: block;
+  margin: auto;
+}
+
+.text-slider {
+  /* background: red; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 10vw;
+}
+
+#slide-title, #slide-description {
+  transition: opacity 1s;
+  -o-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+}
